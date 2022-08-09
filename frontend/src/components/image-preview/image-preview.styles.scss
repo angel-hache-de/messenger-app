@@ -1,0 +1,23 @@
+@use "../../sass/components/components" as *;
+
+.image-preview-container {
+  display: inline-block;
+  position: relative;
+  margin: 10px 15px;
+  height: 100%;
+  cursor: pointer;
+  .image {
+    width: 70px;
+    height: 80px;
+    img {
+      @extend %image-cover;
+    }
+  }
+  .icon {
+    position: absolute;
+    top: -7%;
+    right: -10%;
+    color: var(--icon-color);
+    // z-index: 50;
+  }
+}

@@ -1,0 +1,12 @@
+.active-friends {
+  overflow: hidden;
+  min-height: 50px;
+
+  .image-active-icon {
+    overflow-x: scroll;
+    display: flex;
+    &::-webkit-scrollbar {
+      overflow: hidden;
+    }
+  }
+}

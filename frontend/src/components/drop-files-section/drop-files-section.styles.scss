@@ -1,0 +1,15 @@
+.drop-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.4;
+  padding: 10px 0px;
+  .icon {
+    color: aqua;
+  }
+  p {
+    color: var(--text-color);
+    font-size: large;
+  }
+}

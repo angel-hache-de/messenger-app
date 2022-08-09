@@ -1,0 +1,26 @@
+.messenger {
+  background-color: var(--bg-color);
+  width: 100%;
+  min-width: 1200px;
+  // // min-height: 800px;
+  height: 100vh;
+  // position: fixed;
+  // overflow-x: scroll;
+
+  .row {
+    height: 100%;
+    .col-3 {
+      height: 100%;
+      .left-side {
+        height: 100%;
+        padding: 5px 0;
+        border-right: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        // overflow-y: scroll !important;
+        // min-width: 280px;
+      }
+    }
+  }
+}

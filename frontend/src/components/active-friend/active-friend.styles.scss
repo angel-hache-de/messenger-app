@@ -1,0 +1,16 @@
+@use "../../sass/components/components" as *;
+// Including the mixin
+// "node-sass": "^7.0.1",
+.active-friends {
+  .image-active-icon {
+    .image {
+      @include avatar-image-container;
+      img {
+        @extend %avatar-image;
+      }
+      .active-icon {
+        @extend %active-icon;
+      }
+    }
+  }
+}

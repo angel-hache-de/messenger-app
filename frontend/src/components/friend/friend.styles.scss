@@ -1,0 +1,59 @@
+@use "../../sass/components/components" as *;
+
+.friend {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+  overflow-x: hidden;
+  // min-height: 100px;
+  .item {
+    padding: 10px 5px;
+  }
+  .friend-image {
+    .image {
+      @include avatar-image-container($height: 45px, $width: 45px);
+      img {
+        @extend %avatar-image;
+      }
+    }
+  }
+  .friend-name {
+    flex-grow: 1;
+    h4 {
+      color: var(--text-color);
+    }
+    p {
+      color: var(--start-conversation-color);
+    }
+    .message-info {
+      display: inline;
+      span {
+        color: var(--text-color);
+      }
+      .moment-time {
+        color: var(--moment-time-color);
+      }
+    }
+  }
+
+  .message-label {
+    // background-color: greenyellow;
+    color: var(--text-color);
+    span {
+      color: #fff;
+      border-radius: 15%;
+      background-color: #22734a;
+      font-size: smaller;
+    }
+
+    .image-container {
+      height: 20px;
+      width: 20px;
+
+      img {
+        @extend %avatar-image;
+      }
+    }
+  }
+}

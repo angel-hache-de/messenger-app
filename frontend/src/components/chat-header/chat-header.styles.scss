@@ -1,0 +1,40 @@
+@use "../../sass/components/components" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border-color);
+  .image-name {
+    display: flex;
+    .image {
+      @include avatar-image-container;
+
+      img {
+        @extend %avatar-image;
+        border: 3px solid var(--image-border-color);
+      }
+      .active-icon {
+        @extend %active-icon;
+        z-index: 10;
+      }
+    }
+    .name {
+      margin: auto 0px;
+      padding-left: 10px;
+      h3 {
+        color: var(--text-color);
+      }
+      p {
+        color: yellowgreen;
+      }
+    }
+  }
+  .icons {
+    @extend %icons-container;
+    .icon {
+      @extend %icon-container;
+    }
+  }
+}

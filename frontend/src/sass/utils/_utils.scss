@@ -1,0 +1,143 @@
+$invalid-color:  #f88787;
+
+.card {
+  width: 375px;
+  padding: 15px 20px;
+  background-color: #141b2bd4;
+  box-shadow: 0px 0px 25px #f5f0f0;
+}
+
+.form-group {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  padding: 12px;
+  border: none;
+  outline: none;
+  background-color: #0a0e1585;
+  &::placeholder {
+    color: #fff;
+    font-weight: 400;
+  }
+}
+
+label {
+  margin-bottom: 5px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.btn {
+  outline: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 12px;
+  text-align: center;
+  background-color: #101a23eb;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.invalid-field {
+  color: $invalid-color;
+  font-weight: lighter;
+  text-align: left !important;
+}
+
+// Dot Elastic animation
+.dot-elastic {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dotElastic 1s infinite linear;
+}
+
+.dot-elastic::before, .dot-elastic::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-elastic::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dotElasticBefore 1s infinite linear;
+}
+
+.dot-elastic::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dotElasticAfter 1s infinite linear;
+}
+
+@keyframes dotElasticBefore {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1.5);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes dotElastic {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 1.5);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes dotElasticAfter {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

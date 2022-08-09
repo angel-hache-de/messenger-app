@@ -1,0 +1,7 @@
+node_modules
+frontend/node_modules
+dist
+.env
+frontend/build
+frontend/cypress/integration/1-getting-started
+frontend/cypress/integration/2-advanced-examples
