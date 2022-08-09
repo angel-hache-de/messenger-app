@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=development nodemon dist/app.js",
     "start": "node dist/app.js",
     "e2e": "cross-env NODE_ENV=test nodemon dist/app.js",
-    "build": "tsc -p tsconfig.build.json && cd frontend && npm i && npm run build && cd ..",
+    "build": "tsc -p tsconfig.build.json",
     "watch": "tsc -p tsconfig.build.json --watch"
   },
   "keywords": [],
