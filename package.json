@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test jest",
     "dev": "cross-env NODE_ENV=development nodemon dist/app.js",
-    "start": "node dist/app.js",
+    "start": "cross-env NODE_ENV=production node dist/app.js",
     "e2e": "cross-env NODE_ENV=test nodemon dist/app.js",
     "build": "tsc -p tsconfig.build.json",
     "watch": "tsc -p tsconfig.build.json --watch"

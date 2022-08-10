@@ -1,6 +1,5 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunkMiddleware from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
 
 import authReducer from "./reducers/authReducer";
 import { IStoreState } from "./types";
@@ -21,16 +20,19 @@ const rootReducer = combineReducers({
 
 const middlewares = [thunkMiddleware];
 const middlewareEnhancer = applyMiddleware(...middlewares);
-const enhancers = [middlewareEnhancer];
+const devEnhancers = [middlewareEnhancer];
 
-console.log("HOLAAAAAAA");
-console.log(process.env.NODE_ENV);
-console.log(process.env.REACT_APP_URL);
+let enhancer;
 
-const store = createStore(
-  rootReducer,
-  initialState as IStoreState,
-  composeWithDevTools(...enhancers)
-);
+if (process.env.NODE_ENV === "development") {
+  console.log("DENTRO DEL DEV");
+  const { composeWithDevTools } = require("redux-devtools-extension");
+  enhancer = composeWithDevTools(...devEnhancers);
+} else {
+  console.log("FUERA DEL DEV");
+  enhancer = middlewareEnhancer;
+}
+
+const store = createStore(rootReducer, initialState as IStoreState, enhancer);
 
 export default store;

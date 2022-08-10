@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { io, Socket } from "socket.io-client";
 import { Toaster, toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { useAlert } from "react-alert";
+import { useDispatch, useSelector } from "react-redux";
 
-import "./messenger.style.scss";
 import Friends from "../../components/friends";
 import RightSide from "../../components/right-side";
-import { useDispatch, useSelector } from "react-redux";
 import { IStoreState } from "../../store/types";
-import { useNavigate } from "react-router-dom";
 import FriendSectionHeader from "../../components/friend-section-header";
 
 import {
@@ -16,7 +16,6 @@ import {
   IFriendsObj,
 } from "../../store/types/friendsTypes";
 import ActiveFriends from "../../components/active-friends";
-import { useAlert } from "react-alert";
 import {
   IStatusAction,
   STATUS_ACTION_TYPE,
@@ -39,6 +38,8 @@ import {
   ClientToServerEvents,
   ServerToClientEvents,
 } from "../../typings/socket";
+
+import "./messenger.style.scss";
 
 const Messenger = () => {
   const {
@@ -82,7 +83,7 @@ const Messenger = () => {
     }
 
     const token = localStorage.getItem("authToken");
-    socketRef.current = io("ws://localhost:5000", {
+    socketRef.current = io(process.env.REACT_APP_SOCKET_ENDPOINT!, {
       auth: {
         token,
       },
@@ -99,9 +100,6 @@ const Messenger = () => {
           socketRef.current = null;
           removeToken(dispatch);
         } else {
-          console.log("ERROR...");
-          console.log(err);
-
           dispatch({
             type: STATUS_ACTION_TYPE.SET_ERROR,
             payload: {
