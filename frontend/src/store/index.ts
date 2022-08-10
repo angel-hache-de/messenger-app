@@ -23,6 +23,10 @@ const middlewares = [thunkMiddleware];
 const middlewareEnhancer = applyMiddleware(...middlewares);
 const enhancers = [middlewareEnhancer];
 
+console.log("HOLAAAAAAA");
+console.log(process.env.NODE_ENV);
+console.log(process.env.REACT_APP_URL);
+
 const store = createStore(
   rootReducer,
   initialState as IStoreState,
