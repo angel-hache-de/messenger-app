@@ -6,10 +6,9 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test jest",
     "dev": "cross-env NODE_ENV=development nodemon dist/app.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "start": "node dist/app.js",
     "e2e": "cross-env NODE_ENV=test nodemon dist/app.js",
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json && NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "watch": "tsc -p tsconfig.build.json --watch"
   },
   "keywords": [],
